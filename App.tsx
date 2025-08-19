@@ -1,11 +1,6 @@
 import { StatusBar } from "react-native";
-import Um from "./screens/Um";
+import Home from "./screens/Home";
 
 export default function App() {
-  return (
-    <>
-      <StatusBar hidden />
-      <Um />
-    </>
-  );
+  return <Home />;
 }
