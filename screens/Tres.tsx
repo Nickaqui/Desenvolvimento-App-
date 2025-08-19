@@ -1,15 +1,16 @@
 import { View, StyleSheet } from "react-native";
 import Constants from "expo-constants";
 
-export default function Dois() {
+export default function Tres() {
   return (
     <View style={styles.container}>
       <View style={styles.top}>
         <View style={styles.left} />
-        <View style={styles.right} />
+        <View style={styles.right}>
+          <View style={styles.teal} />
+          <View style={styles.skyblue} />
+        </View>
       </View>
-
-
       <View style={styles.bottom} />
     </View>
   );
@@ -23,8 +24,7 @@ const styles = StyleSheet.create({
   },
   top: {
     flex: 0.5,
-    backgroundColor: "crimson",
-    flexDirection: "row",
+    flexDirection: "row", 
   },
   bottom: {
     flex: 0.5,
@@ -36,6 +36,14 @@ const styles = StyleSheet.create({
   },
   right: {
     flex: 0.5,
-    backgroundColor: "aquamarine",
+    flexDirection: "column", 
+  },
+  teal: {
+    flex: 0.5,
+    backgroundColor: "teal",
+  },
+  skyblue: {
+    flex: 0.5,
+    backgroundColor: "skyblue",
   },
 });
