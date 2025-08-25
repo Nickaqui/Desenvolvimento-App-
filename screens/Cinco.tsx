@@ -9,16 +9,16 @@ export default function Cinco() {
 
   return (
     <View style={styles.container}>
-      {/* Parte superior dividida em 2 colunas */}
+
       <View style={styles.top}>
-        {/* Esquerda: Lime */}
+
         <View style={styles.left}>
           <TouchableOpacity onPress={handlePress}>
             <Image source={logo} style={styles.image} resizeMode="contain" />
           </TouchableOpacity>
         </View>
 
-        {/* Direita dividida em 2 */}
+      
         <View style={styles.right}>
           <View style={styles.teal}>
             <TouchableOpacity onPress={handlePress}>
@@ -33,7 +33,7 @@ export default function Cinco() {
         </View>
       </View>
 
-      {/* Parte inferior (Salmon) */}
+    
       <View style={styles.bottom}>
         <TouchableOpacity onPress={handlePress}>
           <Image source={logo} style={styles.image} resizeMode="contain" />
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   image: {
-    width: 64,   // tamanho fixo pedido
+    width: 64,
     height: 64,
   },
 });
