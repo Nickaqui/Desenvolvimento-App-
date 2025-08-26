@@ -3,9 +3,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { Ionicons } from '@expo/vector-icons';
 
-// Importação das telas
+
 import Um from './screens/Um';
-import Excep from './screens/ExCep'; // Se você for usar essa tela para o exercício do CEP
+import Excep from './screens/ExCep'; 
 import Dois from './screens/Dois';
 import Tres from './screens/Tres';
 import Quatro from './screens/Quatro';
@@ -15,14 +15,15 @@ import Sete from './screens/Sete';
 import Oito from './screens/Oito';
 import Nove from './screens/Nove';
 import Dez from './screens/Dez';
+import HistoricoCep from './screens/HistoricoCep';
 
-import { CepProvider } from './contexts/Cepcontext'; // ✔️ Contexto de CEP
+import { CepProvider } from './contexts/Cepcontext'; 
 
 const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
-    <CepProvider> {/* ✔️ Envolvendo tudo no contexto */}
+    <CepProvider> 
       <NavigationContainer>
         <Drawer.Navigator
           initialRouteName="Um"
@@ -50,7 +51,7 @@ export default function App() {
                 Oito: 'wifi',
                 Nove: 'key',
                 Dez: 'folder',
-                Excep: 'search', // ícone para tela de consulta de CEP
+                Excep: 'search', 
               };
               return (
                 <Ionicons
@@ -73,6 +74,7 @@ export default function App() {
           <Drawer.Screen name="Nove" component={Nove} options={{ drawerLabel: 'Exercício 9' }} />
           <Drawer.Screen name="Dez" component={Dez} options={{ drawerLabel: 'Exercício 10' }} />
           <Drawer.Screen name="Excep" component={Excep} options={{ drawerLabel: 'Consulta CEP' }} />
+          <Drawer.Screen name="HistoricoCep" component={HistoricoCep} options={{ drawerLabel: 'Histórico de CEPs' }} />
         </Drawer.Navigator>
       </NavigationContainer>
     </CepProvider>

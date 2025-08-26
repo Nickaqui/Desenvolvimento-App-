@@ -12,13 +12,23 @@ import { useCep } from "../hooks/useCep";
 
 export default function Excep() {
   const [cepInput, setCepInput] = useState("");
-  const { data, setData } = useCep();
+  const [erro, setErro] = useState(false);
+
+  const { data, setData, adicionarAoHistorico } = useCep();
 
   const handleSearch = async () => {
     try {
       const result = await getCep(cepInput);
+
+      if (result.erro) {
+        setErro(true);
+        setData(null);
+        return;
+      }
+
+      setErro(false);
       setData(result);
-      Keyboard.dismiss();
+      adicionarAoHistorico(result); 
     } catch (error) {
       console.error("Erro ao buscar o CEP:", error);
     }
@@ -38,7 +48,9 @@ export default function Excep() {
         <Text style={styles.buttonText}>Obter</Text>
       </TouchableOpacity>
 
-      {data && (
+      {erro && <Text style={styles.error}>CEP inválido</Text>}
+
+      {data && !erro && (
         <View style={styles.result}>
           <Text style={styles.resultText}>
             Logradouro: {data.logradouro || ""}
@@ -86,5 +98,10 @@ const styles = StyleSheet.create({
   },
   resultText: {
     color: "#fff",
+  },
+  error: {
+    color: "red",
+    fontWeight: "bold",
+    marginTop: 10,
   },
 });
