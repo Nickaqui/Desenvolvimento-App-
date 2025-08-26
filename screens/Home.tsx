@@ -8,12 +8,8 @@ import Sete from "./Sete";
 import Oito from "./Oito";
 import Nove from "./Nove";
 import Dez from "./Dez";
-import Onze from "./Onze"
 
 export default function Home() {
-  // Troque aqui qual exercício você quer exibir
-  // return <Um />;
-  // return <Dois />;
-  // return <Tres />;
+
   return <Quatro />;
 }
