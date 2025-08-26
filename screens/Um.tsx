@@ -1,11 +1,10 @@
-import { View, StyleSheet } from "react-native";
-import Constants from "expo-constants";
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 
 export default function Um() {
   return (
     <View style={styles.container}>
-      <View style={styles.top} />
-      <View style={styles.bottom} />
+      <Text style={styles.text}>Tela Um</Text>
     </View>
   );
 }
@@ -13,15 +12,10 @@ export default function Um() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: "column",
-    paddingTop: Constants.statusBarHeight,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  top: {
-    flex: 0.5,
-    backgroundColor: "crimson",
+  text: {
+    fontSize: 24,
   },
-  bottom: {
-    flex: 0.5,
-    backgroundColor: "salmon",
-  },
-})
+});
