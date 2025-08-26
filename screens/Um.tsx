@@ -24,4 +24,4 @@ const styles = StyleSheet.create({
     flex: 0.5,
     backgroundColor: "salmon",
   },
-});
+})

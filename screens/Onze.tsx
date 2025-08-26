@@ -1,25 +1,36 @@
+import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { RootStackParamList } from "../types";
 
-import React from "react";
-import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from "react-native";
+type Props = NativeStackScreenProps<RootStackParamList, "Onze">;
 
-export default function App() {
-  const botoes = ["Um","Dois","Três","Quatro","Cinco","Seis","Sete","Oito","Nove","Dez"];
+export default function Onze({ navigation }: Props) {
+  const botoes = [
+    "Um",
+    "Dois",
+    "Tres",
+    "Quatro",
+    "Cinco",
+    "Seis",
+    "Sete",
+    "Oito",
+    "Nove",
+    "Dez",
+  ];
 
   return (
     <View style={styles.container}>
-      
-      <Image
-        source={require("../assets/fatec.png")} 
-        style={styles.logo}
-      />
-
+      <Image source={require("../assets/fatec.png")} style={styles.logo} />
       <Text style={styles.title}>HOME</Text>
 
-     
       <View style={styles.grid}>
-        {botoes.map((texto, index) => (
-          <TouchableOpacity key={index} style={styles.button}>
-            <Text style={styles.buttonText}>{texto}</Text>
+        {botoes.map((nome) => (
+          <TouchableOpacity
+            key={nome}
+            style={styles.button}
+            onPress={() => navigation.navigate(nome as any)}
+          >
+            <Text style={styles.buttonText}>{nome}</Text>
           </TouchableOpacity>
         ))}
       </View>

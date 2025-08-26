@@ -13,5 +13,7 @@ import Onze from "./Onze"
 export default function Home() {
   // Troque aqui qual exercício você quer exibir
   // return <Um />;
-  return <Onze />;
+  // return <Dois />;
+  // return <Tres />;
+  return <Quatro />;
 }
