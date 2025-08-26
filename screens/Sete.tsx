@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { SafeAreaView, Text, TextInput, TouchableOpacity, View, StyleSheet } from 'react-native';
 
-export default function App() {
+export default function Sete() {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [resultado, setResultado] = useState('');

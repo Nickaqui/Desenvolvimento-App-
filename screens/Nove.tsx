@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 
-export default function App() {
+export default function Nove() {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [confirmaSenha, setConfirmaSenha] = useState('');
@@ -68,7 +68,7 @@ export default function App() {
         </View>
 
         <Text style={styles.result}>
-          {email} - {senha} - {confirmaSenha} - {perfil}
+          {`${email || ''} - ${senha || ''} - ${confirmaSenha || ''} - ${perfil || ''}`}
         </Text>
       </View>
     </View>

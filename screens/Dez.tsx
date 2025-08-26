@@ -10,7 +10,7 @@ import {
 import { Picker } from '@react-native-picker/picker';
 
 
-export default function App() {
+export default function Dez() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [confSenha, setConfSenha] = useState("");
@@ -79,7 +79,7 @@ export default function App() {
         </View>
 
         <Text style={styles.footer}>
-          {email} - {senha} - {confSenha} - {cargo} - {logado ? "sim" : "não"}
+          {`${email || ''} - ${senha || ''} - ${confSenha || ''} - ${cargo || ''} - ${logado ? "sim" : "não"}`}
         </Text>
       </View>
     </View>
